@@ -66,19 +66,23 @@ int catafire(){
   while(true){
     if(Controller1.ButtonA.pressing())
     {
+      //release the catapult
       Catapult.spinFor(vex::forward, 0.5, seconds);
       while(Rotation.angle() > 305 || Rotation.angle() < 10)
       {
+        //spin the catapult until it is ready to intake
         Catapult.spin(vex::forward, 100, percent);
         vex::task::sleep(50);
       }
     }
     else if(Controller1.ButtonB.pressing())
     {
+      //intake carry-around mode
       Catapult.spinFor(vex::reverse, 0.5, seconds);
     }
     else
     {
+      //hold the catapult position
       Catapult.stop(hold);
     }
     vex::task::sleep(50);
@@ -113,34 +117,20 @@ void usercontrol(void) {
     //spin the chassis
     if(go != 49 || rotate != 49){
       if(rotate == 49){
-        if(Controller1.ButtonY.pressing())
-        {
-          FrontLeft.spin(vex::forward, go * 2 - 99, percent);
-          FrontRight.spin(vex::forward, go * 2 - 99, percent);
-          BackLeft.spin(vex::forward, go * 2 - 99, percent);
-          BackRight.spin(vex::forward, go * 2 - 99, percent);
-        }
-        else{
-          FrontLeft.spin(vex::forward, ((go * 2 - 99) / 1), percent);
-          FrontRight.spin(vex::forward, ((go * 2 - 99) / 1), percent);
-          BackLeft.spin(vex::forward, ((go * 2 - 99) / 1), percent);
-          BackRight.spin(vex::forward, ((go * 2 - 99) / 1), percent);
-        }
+        FrontLeft.spin(vex::forward, go * 2 - 99, percent);
+        FrontRight.spin(vex::forward, go * 2 - 99, percent);
+        MiddleLeft.spin(vex::forward, go * 2 - 99, percent);
+        MiddleRight.spin(vex::forward, go * 2 - 99, percent);
+        BackLeft.spin(vex::forward, go * 2 - 99, percent);
+        BackRight.spin(vex::forward, go * 2 - 99, percent);
       }
       else{
-        if(Controller1.ButtonY.pressing())
-        {
-          FrontLeft.spin(vex::forward, ((go * 2 - 99)) + ((rotate * 2 - 99) / 2), percent);
-          FrontRight.spin(vex::forward, ((go * 2 - 99)) - ((rotate * 2 - 99) / 2), percent);
-          BackLeft.spin(vex::forward, ((go * 2 - 99)) + ((rotate * 2 - 99) / 2), percent);
-          BackRight.spin(vex::forward, ((go * 2 - 99)) - ((rotate * 2 - 99) / 2), percent);
-        }
-        else{
-          FrontLeft.spin(vex::forward, ((go * 2 - 99) / 1) + ((rotate * 2 - 99) / 2), percent);
-          FrontRight.spin(vex::forward, ((go * 2 - 99) / 1) - ((rotate * 2 - 99) / 2), percent);
-          BackLeft.spin(vex::forward, ((go * 2 - 99) / 1) + ((rotate * 2 - 99) / 2), percent);
-          BackRight.spin(vex::forward, ((go * 2 - 99) / 1) - ((rotate * 2 - 99) / 2), percent);
-        }
+        FrontLeft.spin(vex::forward, ((go * 2 - 99)) + ((rotate * 2 - 99) / 2), percent);
+        FrontRight.spin(vex::forward, ((go * 2 - 99)) - ((rotate * 2 - 99) / 2), percent);
+        MiddleLeft.spin(vex::forward, ((go * 2 - 99)) + ((rotate * 2 - 99) / 2), percent);
+        MiddleRight.spin(vex::forward, ((go * 2 - 99)) - ((rotate * 2 - 99) / 2), percent);
+        BackLeft.spin(vex::forward, ((go * 2 - 99)) + ((rotate * 2 - 99) / 2), percent);
+        BackRight.spin(vex::forward, ((go * 2 - 99)) - ((rotate * 2 - 99) / 2), percent);
       }
     }
     else{

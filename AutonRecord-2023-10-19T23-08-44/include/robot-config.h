@@ -10,10 +10,11 @@ extern motor BackRight;
 extern controller Controller1;
 extern digital_out Flap1;
 extern digital_out Flap2;
-extern limit LimitSwitchC;
 extern motor Intake;
 extern motor Catapult;
 extern rotation Rotation;
+extern motor MiddleLeft;
+extern motor MiddleRight;
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.

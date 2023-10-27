@@ -15,10 +15,11 @@ motor BackRight = motor(PORT12, ratio18_1, false);
 controller Controller1 = controller(primary);
 digital_out Flap1 = digital_out(Brain.ThreeWirePort.A);
 digital_out Flap2 = digital_out(Brain.ThreeWirePort.B);
-limit LimitSwitchC = limit(Brain.ThreeWirePort.C);
 motor Intake = motor(PORT18, ratio6_1, false);
 motor Catapult = motor(PORT2, ratio36_1, true);
 rotation Rotation = rotation(PORT1, false);
+motor MiddleLeft = motor(PORT3, ratio18_1, true);
+motor MiddleRight = motor(PORT4, ratio18_1, false);
 
 // VEXcode generated functions
 // define variable for remote controller enable/disable
