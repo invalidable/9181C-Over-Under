@@ -9,7 +9,6 @@ extern motor BackLeft;
 extern motor BackRight;
 extern controller Controller1;
 extern digital_out Flap1;
-extern digital_out Flap2;
 extern motor Catapult;
 extern motor Intake;
 extern rotation Rotation;
